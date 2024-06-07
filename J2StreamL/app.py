@@ -182,7 +182,8 @@ def main( *args ) -> None :
 
 	
 	#os.path.dirname(os.path.abspath(sys.argv[0]))
-	AppCfg = loadConfiguration(os.path.join(os.path.dirname((os.path.abspath(sys.path[0])), f'{CONST_APP_CFG}'))
+	print os.path.dirname(os.path.abspath(sys.argv[0]))
+	AppCfg = loadConfiguration(os.path.join(sys.path[0]), f'{CONST_APP_CFG}')
 
 	if CONST_APP_CFG_ENV not in AppCfg[CONST_APP_NAME] :
 		logging.warning (f'missing env key, using {CONST_DEF_ENV} ') 
