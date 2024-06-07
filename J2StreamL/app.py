@@ -178,11 +178,8 @@ def getCfgOptionStr( configuration : dict, nom : str, default : int ) -> str :
 @performance
 @trace
 def main( *args ) -> None :
-
 	
-	print(sys.argv)
-	
-	AppCfg = loadConfiguration(f'{CONST_APP_CFG}')
+	AppCfg = loadConfiguration(os.path.join(sys.path[0], f'{CONST_APP_CFG}'))
 
 	if CONST_APP_CFG_ENV not in AppCfg[CONST_APP_NAME] :
 		logging.warning (f'missing env key, using {CONST_DEF_ENV} ') 
