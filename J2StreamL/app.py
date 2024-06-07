@@ -4,7 +4,8 @@ from st_files_connection import FilesConnection
 from vwlogger import trace
 from vwlogger import performance
 from streamlit_autorefresh import st_autorefresh
-import sys
+from pathlib import Path
+import sys, os
 
 
 import streamlit as st
@@ -178,6 +179,8 @@ def getCfgOptionStr( configuration : dict, nom : str, default : int ) -> str :
 @performance
 @trace
 def main( *args ) -> None :
+
+	
 	
 	AppCfg = loadConfiguration(os.path.join(sys.path[0], f'{CONST_APP_CFG}'))
 
