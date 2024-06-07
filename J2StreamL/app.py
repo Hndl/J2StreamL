@@ -200,7 +200,7 @@ def main( *args ) -> None :
 	logging.info(f'Render Page {pageIdx} of {maxDefinedPages}- Started')
 	pageCfgFile = AppCfg[CONST_APP_NAME][CONST_APP_CFG_PAGES][pageIdx][CONST_APP_CFG_PAGES_CFG] # TODO issue if no pages defined
 	logging.info(f'Loading page configuration {pageIdx} = {pageCfgFile}')
-	cfg = loadConfiguration(f'{CONST_DEF_PATH}{pageCfgFile}')
+	cfg = loadConfiguration(f'{os.path.dirname(os.path.abspath(sys.argv[0]))}/{CONST_DEF_PATH}{pageCfgFile}')
 	stHelper.uxInit(cfg)
 	persitDataSources(cfg)
 	persitCanvas(cfg)
